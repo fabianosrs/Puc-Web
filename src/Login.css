@@ -1,0 +1,18 @@
+h1 {
+  font-family: Arial, sans-serif;
+}
+
+input {
+  width: 280px;
+  border: 1px solid gray;
+  padding: 3px;
+}
+
+button {
+  border: 1px solid gray;
+  background-color: #eeeeee;
+}
+
+p {
+  font-family: Arial, sans-serif;
+}
