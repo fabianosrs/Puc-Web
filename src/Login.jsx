@@ -23,10 +23,7 @@ export default class Login extends Component {
   }
 
   handleAcessar() {
-    if (
-      this.state.email === 'eduardo.lino@pucpr.br' &&
-      this.state.senha === '123456'
-    ) {
+    if (this.state.email === 'fabiano.marques@pucpr.br' && this.state.senha === '123456') {
       this.setState({ mensagem: 'Acessado com sucesso!' })
     } else {
       this.setState({ mensagem: 'Usuário ou senha incorretos!' })
