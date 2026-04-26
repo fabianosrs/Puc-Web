@@ -36,9 +36,10 @@ export default class Login extends Component {
         <h1>Login</h1>
 
         <p>
-          email
+          <label htmlFor="email">email</label>
           <br />
           <input
+            id="email"
             type="text"
             value={this.state.email}
             onChange={this.handleChangeEmail}
@@ -46,9 +47,10 @@ export default class Login extends Component {
         </p>
 
         <p>
-          senha
+          <label htmlFor="senha">senha</label>
           <br />
           <input
+            id="senha"
             type="password"
             value={this.state.senha}
             onChange={this.handleChangeSenha}
