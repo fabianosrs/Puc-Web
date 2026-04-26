@@ -11,3 +11,18 @@ jobs:
     steps:
       - name: Simulando deploy
         run: echo "Deploy realizado com sucesso!"
+
+      - name: Enviar alerta no Discord
+        if: always()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          STATUS: ${{ job.status }}
+          REPOSITORY: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+          COMMIT: ${{ github.sha }}
+          ACTOR: ${{ github.actor }}
+        run: |
+          curl -H "Content-Type: application/json" \
+            -X POST \
+            -d "{\"content\":\"Alerta do GitHub Actions: workflow CD finalizado com status ${STATUS} no repositorio ${REPOSITORY}, branch ${BRANCH}, commit ${COMMIT}, executado por ${ACTOR}.\"}" \
+            "$DISCORD_WEBHOOK"
